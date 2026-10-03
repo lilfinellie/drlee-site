@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import DocPage from '../components/DocPage.astro';
+import Faq from '../components/Faq.astro';
+import { faqSchema, type QA } from '../data/faq';
+import { SITE } from '../data/site';
+
+const booking: QA[] = [
+  { q: '李醫師的門診時間是什麼時候？',
+    a: `<p>${SITE.clinicText}，地點在${SITE.hospital.name}${SITE.hospital.dept}。週三夜診只有單數週開診，出發前建議到掛號系統確認。</p>` },
+  { q: '怎麼掛號？',
+    a: `<p>可以透過<a href="${SITE.hospital.bookingUrl}" target="_blank" rel="noopener">奇美醫院網路掛號</a>，選擇永康院區、神經外科、李瑤琳醫師；也可以使用醫院電話語音掛號或現場掛號。</p>` },
+  { q: '需要轉診單嗎？',
+    a: '<p>不需要轉診單也可以看診，但持有其他醫療院所的轉診單，可以減少部分負擔。若已在其他醫院做過檢查，建議一併申請病歷摘要與影像光碟。</p>' },
+];
+const visit: QA[] = [
+  { q: '第一次看診要帶什麼？',
+    a: '<p>健保卡、目前用藥清單，以及已經做過的 MRI 或 CT 影像光碟與報告、抽血報告。腦下垂體病人若有視野檢查結果也請帶來。可以參考<a href="/#prep">首頁的看診準備清單</a>。</p>' },
+  { q: '我在別家醫院已經被建議開刀，可以來聽第二意見嗎？',
+    a: '<p>可以，也很歡迎。請帶齊影像光碟與報告，我會根據你的影像與症狀說明我的看法，以及開刀與不開刀的選項。</p>' },
+  { q: '我住在外縣市，可以先寄影像給你看嗎？',
+    a: '<p>基於醫療法規與病人安全，診斷與治療建議需要在門診當面評估。建議直接掛號，並把影像光碟帶到門診。</p>' },
+  { q: '家人可以陪同看診嗎？',
+    a: '<p>可以。討論檢查結果或手術計畫時，很鼓勵家人一起來，一起聽、一起問。</p>' },
+];
+const surgery: QA[] = [
+  { q: '手術需要等多久？',
+    a: '<p>依病情的急迫性安排。視力快速惡化、神經無力加重等情況會優先處理；一般排程手術會在門診討論後，依床位與手術室時程安排。</p>' },
+  { q: '手術費用健保有給付嗎？有哪些自費項目？',
+    a: '<p>大部分手術本身有健保給付。部分特殊耗材，例如某些脊椎植入物、止血材料或人工硬腦膜，可能需要自費或差額負擔。術前門診會說明所有自費項目與費用，由你決定是否使用。</p>' },
+  { q: '手術前要停哪些藥？',
+    a: '<p>抗凝血劑、抗血小板藥物，以及部分保健食品（如魚油、銀杏）可能增加出血風險。請不要自行停藥，門診時把完整用藥清單帶來，我們會和你的開藥醫師一起安排停藥時間。</p>' },
+];
+const all = [...booking, ...visit, ...surgery];
+const toc = [
+  { id: 'booking', label: '掛號與門診' },
+  { id: 'visit', label: '看診' },
+  { id: 'surgery', label: '手術前' },
+];
+---
+<Base
+  title="門診常見問題：掛號、第二意見、外地病人與手術費用"
+  description="李瑤琳醫師門診常見問題：門診時間與網路掛號方式、第一次看診要帶什麼、第二意見、外縣市病人、手術等待時間與自費項目說明。"
+  jsonld={[faqSchema(all)]}
+>
+  <DocPage
+    eyebrow="Clinic FAQ"
+    title="門診常見問題"
+    lede="關於掛號、看診與手術前準備，病人最常問的問題都整理在這裡。疾病相關的問題，請見各主題頁面底部。"
+    toc={toc}
+    related={['/pituitary/', '/cervical-spine/', '/low-back-pain/']}
+  >
+    <h2 id="booking">掛號與門診</h2>
+    <Faq items={booking} />
+    <h2 id="visit">看診</h2>
+    <Faq items={visit} />
+    <h2 id="surgery">手術前</h2>
+    <Faq items={surgery} />
+  </DocPage>
+</Base>

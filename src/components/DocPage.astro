@@ -1,0 +1,45 @@
+---
+import { SITE, NAV } from '../data/site';
+interface Props {
+  eyebrow: string;
+  title: string;
+  lede: string;
+  toc: { id: string; label: string }[];
+  related?: string[]; // NAV 裡的 href
+  updated?: string;
+}
+const { eyebrow, title, lede, toc, related = [], updated = '2026 年 10 月' } = Astro.props;
+const rel = NAV.filter((n) => related.includes(n.href));
+---
+<div class="wrap">
+  <p class="crumbs"><a href="/">首頁</a> ／ {title.split('｜')[0]}</p>
+  <div class="page-hero">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{title}</h1>
+    <p class="lede">{lede}</p>
+    <p class="meta">撰文：李瑤琳醫師（奇美醫學中心 神經外科）・最後更新：{updated}</p>
+  </div>
+  <div class="doc">
+    <nav class="toc" aria-label="本頁目錄">
+      <p class="label">本頁目錄</p>
+      <ol>{toc.map((t) => <li><a href={`#${t.id}`}>{t.label}</a></li>)}</ol>
+    </nav>
+    <article class="prose">
+      <slot />
+      <section class="book" aria-label="掛號">
+        <h2>想讓我看看你的狀況</h2>
+        <p>門診時間：{SITE.clinicText}<br />{SITE.hospital.name}・{SITE.hospital.dept}</p>
+        <p class="cta" style="margin-top:4px">
+          <a class="btn primary" href={SITE.hospital.bookingUrl} target="_blank" rel="noopener">網路掛號 ↗</a>
+          <a class="btn ghost" href="/#prep">第一次看診要帶什麼</a>
+        </p>
+      </section>
+      {rel.length > 0 && (
+        <div style="margin-top:40px">
+          <p class="label">相關主題</p>
+          <div class="related">{rel.map((r) => <a href={r.href}>{r.label}</a>)}</div>
+        </div>
+      )}
+    </article>
+  </div>
+</div>

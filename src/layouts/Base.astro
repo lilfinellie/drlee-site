@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+import { SITE, NAV } from '../data/site';
+
+interface Props {
+  title: string;          // 分頁標題（Google 搜尋結果的藍色標題）
+  description: string;    // 搜尋結果下方的說明文字，約 80–120 字
+  bilingual?: boolean;    // 首頁有中英切換
+  jsonld?: object[];      // 額外的結構化資料（例如 FAQ）
+}
+const { title, description, bilingual = false, jsonld = [] } = Astro.props;
+const path = Astro.url.pathname;
+const canonical = new URL(path, SITE.url).href;
+const fullTitle = path === '/' ? title : `${title}｜李瑤琳醫師`;
+
+const physician = {
+  '@context': 'https://schema.org',
+  '@type': 'Physician',
+  name: `${SITE.doctor.zh} 醫師`,
+  alternateName: `Dr. ${SITE.doctor.en}`,
+  url: SITE.url,
+  medicalSpecialty: ['Neurosurgery', 'Endocrine'],
+  knowsAbout: ['腦下垂體腫瘤', '經鼻內視鏡手術', '顱底手術', '頸椎手術', '腰椎手術', '微創脊椎手術', '神經外傷'],
+  sameAs: [SITE.doctor.orcid],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '中華路901號',
+    addressLocality: '永康區',
+    addressRegion: '台南市',
+    addressCountry: 'TW',
+  },
+  hospitalAffiliation: { '@type': 'Hospital', name: '奇美醫學中心', url: 'https://www.chimei.org.tw/' },
+};
+---
+<!doctype html>
+<html lang="zh-Hant-TW" data-lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:locale" content="zh_TW" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" />
+  <script type="application/ld+json" set:html={JSON.stringify(physician)} />
+  {jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容</a>
+  <header class="top">
+    <div class={`wrap ${bilingual ? '' : 'no-lang'}`}>
+      <a class="brand" href="/">
+        <b><span class="zh">李瑤琳 醫師</span><span class="en">Dr. Yao Lin Lee</span></b>
+        <span class="zh">神經外科｜腦下垂體・顱底內視鏡・脊椎</span><span class="en">Neurosurgery · Pituitary, Skull Base &amp; Spine</span>
+      </a>
+      <nav class="main" id="nav" aria-label="主選單">
+        {NAV.map((n) => <a href={n.href} aria-current={path.startsWith(n.href) ? 'page' : undefined}>{n.label}</a>)}
+      </nav>
+      {bilingual && (
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" id="lang-zh" aria-pressed="true">中</button>
+          <button type="button" id="lang-en" aria-pressed="false">EN</button>
+        </div>
+      )}
+      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">選單</button>
+    </div>
+  </header>
+
+  <main id="main"><slot /></main>
+
+  <footer>
+    <div class="wrap">
+      <p class="zh">本網站內容為一般衛教資訊，無法取代門診的個別評估與診斷。若有緊急狀況，請立即前往急診或撥打 119。</p>
+      <p class="en">This site offers general health information and cannot replace an individual clinical assessment. In an emergency, call 119.</p>
+      <p>門診：{SITE.clinicText}｜{SITE.hospital.name} {SITE.hospital.dept}｜<a href={SITE.hospital.bookingUrl} target="_blank" rel="noopener">網路掛號 ↗</a></p>
+      <p>© {new Date().getFullYear()} 李瑤琳 醫師 · Chi Mei Medical Center</p>
+    </div>
+  </footer>
+
+  <script is:inline>
+    (function () {
+      var b = document.getElementById('menu-btn'), n = document.getElementById('nav');
+      b && b.addEventListener('click', function () {
+        var o = n.classList.toggle('open'); b.setAttribute('aria-expanded', o);
+      });
+      var root = document.documentElement, zh = document.getElementById('lang-zh'), en = document.getElementById('lang-en');
+      if (!zh) return;
+      function set(l) {
+        root.setAttribute('data-lang', l); root.lang = l === 'en' ? 'en' : 'zh-Hant-TW';
+        zh.setAttribute('aria-pressed', l !== 'en'); en.setAttribute('aria-pressed', l === 'en');
+        try { localStorage.setItem('lang', l); } catch (e) {}
+      }
+      var s = 'zh'; try { s = localStorage.getItem('lang') || 'zh'; } catch (e) {}
+      set(s);
+      zh.addEventListener('click', function () { set('zh'); });
+      en.addEventListener('click', function () { set('en'); });
+    })();
+  </script>
+</body>
+</html>

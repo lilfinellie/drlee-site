@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro';
+import DocPage from '../components/DocPage.astro';
+import Faq from '../components/Faq.astro';
+import { faqSchema, type QA } from '../data/faq';
+
+const faqs: QA[] = [
+  { q: '腕隧道症候群一定要開刀嗎？',
+    a: '<p>輕度的腕隧道症候群可以先用護腕、調整手部使用習慣、藥物或注射治療。若麻木持續、晚上常麻醒、大拇指根部肌肉萎縮，或神經傳導檢查顯示中重度壓迫，就建議手術釋放。</p>' },
+  { q: '內視鏡腕隧道手術和傳統手術有什麼不同？',
+    a: '<p>兩者都是切開壓迫正中神經的橫腕韌帶。內視鏡手術的傷口較小，位在手腕皺褶附近，避開手掌承重的位置，許多病人術後握力恢復與回到日常活動較快。</p>' },
+  { q: '使用導航或 3D 內視鏡需要自費嗎？',
+    a: '<p>部分設備或耗材可能需要自費，依手術種類與健保規定而有不同。術前門診會說明需要自費的項目與費用，讓你自行決定。</p>' },
+];
+const toc = [
+  { id: 'principle', label: '微創的原則' },
+  { id: 'carpal', label: '內視鏡腕隧道手術' },
+  { id: 'ich', label: '立體定位血塊抽吸' },
+  { id: 'equipment', label: '手術設備' },
+  { id: 'faq', label: '常見問題' },
+];
+---
+<Base
+  title="神經外科微創手術與設備：內視鏡、導航、顯微鏡與立體定位"
+  description="奇美神經外科李瑤琳醫師介紹神經外科微創手術：內視鏡腕隧道（正中神經）釋放、立體定位腦出血血塊抽吸，以及手術導航、顯微鏡、2D 與 3D 內視鏡如何讓手術更精準。"
+  jsonld={[faqSchema(faqs)]}
+>
+  <DocPage
+    eyebrow="Minimally invasive neurosurgery"
+    title="微創手術與設備｜用更小的路徑，做完整的手術"
+    lede="微創不只是傷口小。它的意思是：用最少的正常組織破壞，到達病灶並把事情做完整。適合的設備，讓這件事更精準、更安全。"
+    toc={toc}
+    related={['/pituitary/', '/trauma/', '/cervical-spine/']}
+  >
+    <h2 id="principle">微創的原則</h2>
+    <p>選擇手術方式時，我的順序是：先確保病灶處理完整，再選擇破壞最少的路徑。小傷口如果換來不完整的減壓或切除，就不是好的選擇。</p>
+    <p>神經外科的微創手術包括經鼻內視鏡腦下垂體與顱底手術、微創脊椎減壓與經皮螺釘固定、內視鏡周邊神經手術，以及立體定位手術。</p>
+
+    <h2 id="carpal">內視鏡腕隧道手術（正中神經釋放）</h2>
+    <p>腕隧道症候群是正中神經在手腕處被橫腕韌帶壓迫，造成大拇指、食指、中指麻木刺痛，常在半夜麻醒，嚴重時大拇指根部肌肉萎縮、拿東西容易掉。</p>
+    <ul>
+      <li><strong>診斷</strong>：門診理學檢查加上神經傳導檢查，也可同時排除<a href="/cervical-spine/">頸椎神經壓迫</a>。</li>
+      <li><strong>手術</strong>：在手腕皺褶附近做小切口，以內視鏡在直視下切開橫腕韌帶，解除正中神經的壓迫。</li>
+      <li><strong>特色</strong>：傷口小、避開手掌承重處，術後疼痛較輕，多數病人可較快恢復日常手部使用。</li>
+      <li><strong>麻醉與時間</strong>：<span class="tbd">待填：局部或全身麻醉、手術時間、是否需住院</span></li>
+    </ul>
+
+    <h2 id="ich">立體定位血塊抽吸</h2>
+    <p>自發性腦出血（常與高血壓有關）或部分外傷出血，血塊位置較深時，傳統開顱需要穿過較多腦組織。立體定位手術以影像座標精準計算路徑，經由頭骨上的小孔放入導管，抽吸或引流血塊。</p>
+    <ul>
+      <li>傷口小，只需一個小骨孔</li>
+      <li>減少對正常腦組織的破壞</li>
+      <li>適合深部、特定大小範圍的血塊，是否適用需由醫師依影像評估</li>
+    </ul>
+    <p>更多腦出血與外傷處理，請見<a href="/trauma/">腦出血與外傷</a>。</p>
+
+    <h2 id="equipment">手術設備</h2>
+    <p>奇美醫學中心神經外科備有以下設備，我會依手術需要選用。<span class="tbd">如要列出廠牌型號可在此補充</span></p>
+    <div class="grid2">
+      <div class="mini"><span class="tag">Navigation</span><h3>手術導航系統</h3><p>像手術中的 GPS，即時顯示器械在病人影像上的位置。用於顱底腫瘤定位、脊椎螺釘置放，幫助避開血管與神經。</p></div>
+      <div class="mini"><span class="tag">Operating microscope</span><h3>手術顯微鏡</h3><p>提供放大、明亮、立體的視野，是脊椎減壓、腦瘤與血管周邊精細操作的基本工具。</p></div>
+      <div class="mini"><span class="tag">2D endoscope</span><h3>高解析 2D 內視鏡</h3><p>廣角視野，搭配不同角度鏡頭可以看到轉角後方的構造，是經鼻腦下垂體手術的主力。</p></div>
+      <div class="mini"><span class="tag">3D endoscope</span><h3>3D 內視鏡</h3><p>提供深度感，讓切除與重建時對距離與層次的判斷更直覺，適合較複雜的顱底手術。</p></div>
+      <div class="mini"><span class="tag">Stereotaxy</span><h3>立體定位系統</h3><p>以影像座標計算路徑，精準到達腦部深處目標，用於血塊抽吸與切片。</p></div>
+      <div class="mini"><span class="tag">Neuromonitoring</span><h3>術中神經監測</h3><p><span class="tbd">若有使用可保留，否則刪除</span>手術中持續監測神經功能，降低神經受損風險。</p></div>
+    </div>
+    <div class="callout"><p>設備是工具，決定結果的仍是手術判斷與團隊合作。我會在術前說明這次手術會用到哪些設備，以及它們對你的意義。</p></div>
+
+    <h2 id="faq">常見問題</h2>
+    <Faq items={faqs} />
+  </DocPage>
+</Base>

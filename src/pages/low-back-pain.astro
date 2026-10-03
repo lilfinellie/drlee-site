@@ -1,0 +1,99 @@
+---
+import Base from '../layouts/Base.astro';
+import DocPage from '../components/DocPage.astro';
+import Faq from '../components/Faq.astro';
+import { faqSchema, type QA } from '../data/faq';
+
+const faqs: QA[] = [
+  { q: '腰痛多久沒好，需要看神經外科？',
+    a: '<p>多數急性腰痛在幾週內會改善。若疼痛超過六週、痛到腳、腳麻無力，或出現大小便異常，就應該就醫評估神經是否受壓。</p>' },
+  { q: '腰椎滑脫一定要開刀嗎？',
+    a: '<p>不一定。輕度滑脫且症狀不重的病人，很多可以靠復健與核心肌群訓練控制。若合併明顯的神經壓迫、走路距離越來越短，或保守治療無效，才會考慮減壓與融合手術。</p>' },
+  { q: '打了骨釘之後，腰還能彎嗎？',
+    a: '<p>融合一到兩節腰椎，日常彎腰、走路、工作大多不受明顯影響，因為其他節段與髖關節仍會分擔活動。</p>' },
+  { q: '微創手術和傳統手術差在哪裡？',
+    a: '<p>微創手術以較小的傷口與管狀牽開器，減少對背部肌肉的剝離，通常術後疼痛較輕、下床較快。但不是每一種狀況都適合微創，選擇的原則是先確保神經減壓完整、脊椎穩定。</p>' },
+];
+const toc = [
+  { id: 'causes', label: '腰痛的常見原因' },
+  { id: 'symptoms', label: '症狀怎麼分' },
+  { id: 'redflags', label: '馬上就醫的警訊' },
+  { id: 'conservative', label: '先試保守治療' },
+  { id: 'surgery', label: '手術方式' },
+  { id: 'recovery', label: '術後恢復' },
+  { id: 'faq', label: '常見問題' },
+];
+---
+<Base
+  title="下背痛與坐骨神經痛：腰椎狹窄、椎間盤突出、滑脫與手術"
+  description="走一段路就腳痠要休息、腰痛合併坐骨神經痛，可能是腰椎管狹窄、椎間盤突出或腰椎滑脫。奇美神經外科李瑤琳醫師說明保守治療、微創減壓與 TLIF 腰椎融合手術。"
+  jsonld={[faqSchema(faqs)]}
+>
+  <DocPage
+    eyebrow="Lumbar spine"
+    title="下背痛與腰椎｜坐骨神經痛、椎管狹窄與手術"
+    lede="大部分的腰痛不需要開刀。需要外科處理的，通常是神經被壓到的那一種：痛到腳、腳麻、走不遠。這一頁幫你分辨，並說明手術的選擇。"
+    toc={toc}
+    related={['/cervical-spine/', '/minimally-invasive/', '/faq/']}
+  >
+    <h2 id="causes">腰痛的常見原因</h2>
+    <div class="grid2">
+      <div class="mini"><span class="tag">Muscle strain</span><h3>肌肉拉傷、筋膜疼痛</h3><p>最常見，通常幾週內自行改善。</p></div>
+      <div class="mini"><span class="tag">Disc herniation</span><h3>椎間盤突出</h3><p>突出的椎間盤壓到神經根，造成坐骨神經痛，年輕人也常見。</p></div>
+      <div class="mini"><span class="tag">Spinal stenosis</span><h3>腰椎管狹窄</h3><p>骨刺、韌帶增厚讓神經空間變窄，走路走不遠。</p></div>
+      <div class="mini"><span class="tag">Spondylolisthesis</span><h3>腰椎滑脫</h3><p>上下脊椎錯位、不穩定，腰痛合併神經壓迫。</p></div>
+    </div>
+
+    <h2 id="symptoms">症狀怎麼分</h2>
+    <ul>
+      <li><strong>只有腰痛、不痛到腳</strong>：多為肌肉、關節或椎間盤退化，以保守治療為主。</li>
+      <li><strong>從屁股痛到小腿或腳背</strong>：坐骨神經痛，常見於椎間盤突出。</li>
+      <li><strong>走一段路腳就痠麻，坐下或彎腰就舒緩</strong>：典型的神經性間歇性跛行，多為腰椎管狹窄。</li>
+      <li><strong>腰痛加上翻身、起身時特別痛</strong>：可能和脊椎不穩定、滑脫有關。</li>
+    </ul>
+
+    <h2 id="redflags">馬上就醫的警訊</h2>
+    <div class="callout warn">
+      <ul>
+        <li>腳突然無力、腳板抬不起來</li>
+        <li>大小便失禁或解不出來、會陰部麻木</li>
+        <li>合併發燒、不明原因體重減輕，或有癌症病史</li>
+        <li>跌倒或外傷後劇烈背痛</li>
+      </ul>
+      <p>這些可能代表馬尾症候群、感染、腫瘤或骨折，需要緊急處理。</p>
+    </div>
+
+    <h2 id="conservative">先試保守治療</h2>
+    <p>多數腰痛與坐骨神經痛，會先從保守治療開始：藥物、復健、核心肌群訓練、調整工作與活動方式，必要時轉介神經阻斷注射。</p>
+    <p>規則治療六到十二週仍無改善、症狀嚴重影響生活，或出現無力等神經學警訊時，就會討論手術。</p>
+
+    <h2 id="surgery">手術方式</h2>
+    <h3>微創腰椎減壓・椎間盤切除</h3>
+    <p>經由小傷口與管狀牽開器，在顯微鏡下移除突出的椎間盤或增生的骨頭與韌帶，解除神經壓迫，不需要打骨釘。適合單純椎間盤突出，或沒有合併不穩定的椎管狹窄。</p>
+    <h3>後位減壓與椎弓根螺釘固定</h3>
+    <p>從背後移除壓迫神經的椎板與韌帶，若脊椎不穩定，再以螺釘與連桿固定。可搭配導航系統提升螺釘置放的準確度。</p>
+    <h3>經椎間孔腰椎椎間融合（TLIF／MIS-TLIF）</h3>
+    <p>從背後側邊進入，清除椎間盤、解除神經壓迫，放入椎間支架，並以螺釘固定，讓滑脫或不穩的腰椎重新穩定。適合時可採微創方式、經皮置入螺釘，減少肌肉破壞。</p>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead><tr><th>術式</th><th>適合</th><th>需要固定</th></tr></thead>
+        <tbody>
+          <tr><td>微創減壓・椎間盤切除</td><td>椎間盤突出、無不穩定的狹窄</td><td>不需要</td></tr>
+          <tr><td>後位減壓與固定</td><td>多節段狹窄合併不穩定</td><td>需要</td></tr>
+          <tr><td>TLIF／MIS-TLIF</td><td>滑脫、退化性不穩定、復發性椎間盤突出</td><td>需要（含椎間支架）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="recovery">術後恢復</h2>
+    <ul>
+      <li>微創減壓：多數病人術後隔天即可下床，住院約 <span class="tbd">待填</span> 天。</li>
+      <li>融合手術：術後一至兩天內在協助下下床，依醫囑配戴背架。</li>
+      <li>術後數週內避免彎腰提重物、久坐；之後循序加入核心訓練。</li>
+      <li>以 X 光追蹤融合與螺釘狀況。</li>
+    </ul>
+
+    <h2 id="faq">常見問題</h2>
+    <Faq items={faqs} />
+  </DocPage>
+</Base>

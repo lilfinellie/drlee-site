@@ -1,0 +1,382 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="李瑤琳醫師｜腦下垂體・顱底內視鏡・脊椎手術｜奇美醫學中心 神經外科"
+  description="奇美醫學中心神經外科李瑤琳醫師，專注腦下垂體腫瘤與經鼻內視鏡顱底手術，並執行頸椎與腰椎減壓、固定、融合等脊椎手術。門診：週二上午、下午，單數週三夜診。"
+  bilingual
+>
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Pituitary · Skull Base · Spine</p>
+      <h1 class="zh">腦下垂體只有豌豆大，<br>卻牽動<em>全身的荷爾蒙</em>。</h1>
+      <h1 class="en">The pituitary is the size of a pea, yet it runs <em>the body's hormones</em>.</h1>
+      <p class="lede zh">我是李瑤琳，奇美醫院神經外科主治醫師。我專注於腦下垂體腫瘤與顱底疾病，以經鼻內視鏡從鼻腔到達病灶，不需在頭上開刀。我也受過完整的神經外科訓練，經常執行頸椎與腰椎的減壓、固定與融合手術，從腦部到脊椎，都能為你做整體的評估。</p>
+      <p class="lede en">I'm Dr. Yao Lin Lee, attending neurosurgeon at Chi Mei Medical Center. I focus on pituitary tumours and skull base disease, reaching them through the nose with an endoscope instead of opening the skull. With full neurosurgical training, I also regularly perform cervical and lumbar decompression, fixation and fusion, so I can look at the whole picture from brain to spine.</p>
+      <div class="who">
+        <div class="portrait">照片<br>待放</div>
+        <p><b class="zh">李瑤琳 醫師</b><b class="en">Dr. Yao Lin Lee, MD</b><br>
+          <span class="zh">神經外科專科醫師・台灣腦下垂體學會理事</span><span class="en">Board-certified neurosurgeon · Governing Board, Taiwan Pituitary Society</span></p>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="#clinic"><span class="zh">門診時間與掛號</span><span class="en">Clinic hours</span> →</a>
+        <a class="btn ghost" href="#prep"><span class="zh">第一次看診要準備什麼？</span><span class="en">Preparing for your first visit</span></a>
+      </div>
+    </div>
+
+    <figure class="atlas">
+      <svg viewBox="0 0 440 360" role="img" aria-labelledby="atlas-t">
+        <title id="atlas-t">經鼻內視鏡到達腦下垂體的路徑示意（矢狀切面）</title>
+        <g fill="none" stroke="var(--ink-2)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <!-- skull & brain outline -->
+          <path d="M96 168 C 82 120, 96 70, 150 44 C 210 16, 300 22, 350 60 C 398 96, 412 160, 396 212 C 386 246, 360 268, 330 276" />
+          <path d="M108 160 C 100 118, 116 82, 158 62 C 214 38, 292 44, 336 78 C 374 108, 386 158, 374 200 C 366 226, 350 242, 328 250" stroke="var(--line)" />
+          <!-- face profile -->
+          <path d="M96 168 C 92 186, 82 204, 62 226 C 54 236, 52 244, 62 248 L 78 252 C 80 260, 84 266, 92 270 C 96 284, 98 300, 104 318" />
+          <!-- skull base: anterior fossa -> planum -> sella -> clivus -->
+          <path d="M108 172 C 140 178, 170 182, 196 184 L 204 186" />
+          <path d="M240 186 C 252 196, 262 214, 270 236 C 278 258, 290 276, 306 290" />
+          <!-- sphenoid sinus -->
+          <path d="M184 198 C 184 192, 190 190, 200 194 L 214 214 C 218 220, 230 222, 238 214 L 244 204 C 252 214, 256 232, 250 246 C 240 258, 204 260, 190 248 C 180 238, 180 214, 184 198 Z" fill="var(--paper-2)"/>
+          <!-- sella floor -->
+          <path d="M204 186 C 206 204, 216 214, 226 214 C 236 214, 240 202, 240 186" stroke="var(--ink)" stroke-width="1.8"/>
+          <!-- nasal cavity -->
+          <path d="M78 252 C 110 252, 150 250, 184 246" />
+          <path d="M100 228 C 130 224, 160 222, 182 220" stroke="var(--line)"/>
+          <path d="M104 240 C 132 238, 158 236, 182 234" stroke="var(--line)"/>
+          <!-- optic chiasm -->
+          <ellipse cx="222" cy="170" rx="16" ry="5" stroke="var(--ink-2)"/>
+          <!-- stalk -->
+          <path d="M222 175 L 222 190" />
+        </g>
+        <!-- pituitary -->
+        <ellipse class="gland" cx="222" cy="200" rx="13" ry="10" fill="var(--accent)" opacity=".9"/>
+        <!-- endoscope trajectory -->
+        <path class="scope" d="M28 262 L 210 206" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 6" fill="none"/>
+        <rect x="16" y="257" width="44" height="9" rx="3" transform="rotate(-17 38 262)" fill="var(--ink)"/>
+        <!-- labels -->
+        <g font-family="Noto Sans TC, sans-serif" font-size="12" fill="var(--muted)">
+          <path d="M238 170 L 300 132" stroke="var(--line)"/><text x="304" y="130" class="zh">視神經交叉</text><text x="304" y="130" class="en">Optic chiasm</text>
+          <path d="M236 200 L 312 176" stroke="var(--line)"/><text x="316" y="174" fill="var(--accent)" font-weight="700" class="zh">腦下垂體</text><text x="316" y="174" fill="var(--accent)" font-weight="700" class="en">Pituitary</text>
+          <path d="M246 236 L 312 222" stroke="var(--line)"/><text x="316" y="220" class="zh">蝶竇</text><text x="316" y="220" class="en">Sphenoid sinus</text>
+          <path d="M262 226 L 330 262" stroke="var(--line)"/><text x="306" y="300" class="zh">斜坡（顱底）</text><text x="306" y="300" class="en">Clivus (skull base)</text>
+          <text x="40" y="300" class="zh">內視鏡經鼻孔進入</text><text x="40" y="300" class="en">Endoscope via the nostril</text>
+        </g>
+      </svg>
+      <figcaption class="zh">矢狀切面示意：腦下垂體位於蝶竇正上方、視神經交叉下方。經鼻內視鏡沿鼻腔通過蝶竇抵達，這也是為什麼腫瘤變大時，常先影響視力。</figcaption>
+      <figcaption class="en">Midline view: the pituitary sits just above the sphenoid sinus and below the optic chiasm. The endoscope travels through the nose and sinus to reach it, which is also why a growing tumour often affects vision first.</figcaption>
+    </figure>
+  </div>
+</div>
+
+
+<!-- HUB -->
+<section aria-labelledby="hub-h" style="padding-block:0 clamp(48px,6vw,72px)">
+  <div class="wrap">
+    <p class="label zh" id="hub-h">依主題閱讀</p><p class="label en">Read by topic</p>
+    <div class="hub" style="margin-top:14px">
+      <a href="/pituitary/"><b>腦下垂體</b><span>腫瘤、荷爾蒙異常、經鼻內視鏡手術</span></a>
+      <a href="/cervical-spine/"><b>頸椎</b><span>手麻、脖子痛、ACDF 與後位減壓</span></a>
+      <a href="/low-back-pain/"><b>下背痛與腰椎</b><span>坐骨神經痛、椎管狹窄、TLIF</span></a>
+      <a href="/minimally-invasive/"><b>微創手術與設備</b><span>腕隧道內視鏡、導航、3D 內視鏡</span></a>
+      <a href="/trauma/"><b>腦出血與外傷</b><span>血塊抽吸、頭部與脊椎外傷</span></a>
+      <a href="/faq/"><b>門診常見問題</b><span>掛號、第二意見、外地病人</span></a>
+    </div>
+  </div>
+</section>
+<!-- SIGNS -->
+<section class="alt" id="signs" aria-labelledby="signs-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="label zh">先看這裡</p><p class="label en">Start here</p>
+        <h2 id="signs-h" class="zh">腦下垂體的問題，常常不像「腦」的問題</h2>
+        <h2 class="en">Pituitary problems rarely feel like brain problems</h2>
+      </div>
+      <p class="zh">很多病人在眼科、婦產科、新陳代謝科繞了一圈，才發現原因在腦下垂體。如果下面的描述讓你覺得熟悉，值得找醫師評估。</p>
+      <p class="en">Many patients see an eye doctor, a gynaecologist or an endocrinologist before anyone looks at the pituitary. If any of these sound familiar, it's worth an assessment.</p>
+    </div>
+    <div class="signs">
+      <article class="sign">
+        <h3 class="zh">走路常撞到門框、看不到旁邊</h3><h3 class="en">Bumping into door frames</h3>
+        <p class="zh">兩側視野慢慢變窄，自己不一定察覺，常是開車或家人提醒才發現。</p>
+        <p class="en">Side vision narrows slowly and often goes unnoticed until driving or family point it out.</p>
+        <p class="maybe zh">可能相關：<b>腫瘤壓迫視神經交叉</b></p><p class="maybe en">Possibly: <b>tumour pressing on the optic chiasm</b></p>
+      </article>
+      <article class="sign">
+        <h3 class="zh">月經不規則、沒懷孕卻有泌乳</h3><h3 class="en">Irregular periods or milk discharge</h3>
+        <p class="zh">男性則可能是性慾下降。抽血常會看到泌乳激素偏高。</p>
+        <p class="en">In men, this can show up as low libido. Bloodwork often shows high prolactin.</p>
+        <p class="maybe zh">可能相關：<b>泌乳激素瘤</b>（多數先用藥物）</p><p class="maybe en">Possibly: <b>prolactinoma</b> (usually treated with medication first)</p>
+      </article>
+      <article class="sign">
+        <h3 class="zh">戒指戴不下、鞋子越買越大</h3><h3 class="en">Rings and shoes no longer fit</h3>
+        <p class="zh">臉型、下巴、手腳慢慢變大，常伴隨打鼾、關節痛、出汗多。</p>
+        <p class="en">Gradual changes in the face, jaw, hands and feet, often with snoring, joint pain and sweating.</p>
+        <p class="maybe zh">可能相關：<b>生長激素腺瘤（肢端肥大症）</b></p><p class="maybe en">Possibly: <b>growth hormone adenoma (acromegaly)</b></p>
+      </article>
+      <article class="sign">
+        <h3 class="zh">血壓血糖怎麼控制都不穩</h3><h3 class="en">Blood pressure and sugar won't settle</h3>
+        <p class="zh">加上臉變圓、肚子變大、皮膚容易瘀青或出現紫紋。</p>
+        <p class="en">Together with a rounder face, central weight gain, easy bruising or purple stretch marks.</p>
+        <p class="maybe zh">可能相關：<b>庫欣氏病</b></p><p class="maybe en">Possibly: <b>Cushing's disease</b></p>
+      </article>
+      <article class="sign">
+        <h3 class="zh">一直很累、怕冷、提不起勁</h3><h3 class="en">Constant fatigue and feeling cold</h3>
+        <p class="zh">容易被當成工作太累。其實可能是多種荷爾蒙同時不足。</p>
+        <p class="en">Easy to blame on overwork. It may be several hormones running low at once.</p>
+        <p class="maybe zh">可能相關：<b>腦下垂體功能低下</b></p><p class="maybe en">Possibly: <b>hypopituitarism</b></p>
+      </article>
+      <article class="sign">
+        <h3 class="zh">健檢 MRI 意外發現一個「小東西」</h3><h3 class="en">An MRI found something by chance</h3>
+        <p class="zh">大部分不需要開刀，但需要確認荷爾蒙與視野，並安排追蹤間隔。</p>
+        <p class="en">Most don't need surgery, but hormones and vision should be checked and follow-up planned.</p>
+        <p class="maybe zh">可能相關：<b>偶發腦下垂體瘤</b></p><p class="maybe en">Possibly: <b>pituitary incidentaloma</b></p>
+      </article>
+    </div>
+    <p class="note zh">這些症狀也可能有其他原因，這裡的整理不能取代門診評估。<a href="/pituitary/">閱讀完整的腦下垂體說明 →</a></p>
+    <p class="note en">These symptoms have other causes too. This list does not replace a clinical assessment.</p>
+  </div>
+</section>
+
+<!-- SURGERY -->
+<section id="surgery" aria-labelledby="surg-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="label zh">經鼻內視鏡手術</p><p class="label en">Endoscopic endonasal surgery</p>
+        <h2 id="surg-h" class="zh">從鼻孔進去，不在頭上開刀</h2>
+        <h2 class="en">Through the nose, not through the skull</h2>
+      </div>
+      <p class="zh">腦下垂體在頭顱的正中央，從頭頂或側邊開刀要繞過大腦；從鼻腔走，反而是最短、最直接的路。內視鏡讓我在手術中看到廣角、高解析度的影像。</p>
+      <p class="en">The pituitary sits at the very centre of the head. Going through the nose is the shortest, most direct path, and the endoscope gives a wide, high-definition view during surgery.</p>
+    </div>
+    <div class="route">
+      <dl class="facts">
+        <div class="fact"><dt>Incision</dt><dd class="zh">臉上與頭皮沒有傷口</dd><dd class="en">No incision on the face or scalp</dd></div>
+        <div class="fact"><dt>Nose</dt><dd class="zh">外觀不改變；術後數週內可能鼻塞、需鼻腔沖洗</dd><dd class="en">Appearance unchanged; congestion and saline rinses for a few weeks</dd></div>
+        <div class="fact"><dt>Stay</dt><dd class="zh">住院天數依病況而定，<span class="tbd">待填常見天數</span></dd><dd class="en">Length of stay varies; <span class="tbd">typical range TBD</span></dd></div>
+        <div class="fact"><dt>Team</dt><dd class="zh">與內分泌科、眼科、耳鼻喉科共同照顧</dd><dd class="en">Shared care with endocrinology, ophthalmology and ENT</dd></div>
+      </dl>
+      <div>
+        <ol class="journey">
+          <li><div><h3 class="zh">門診評估</h3><h3 class="en">First consultation</h3><p class="zh">看你的症狀與影像，畫圖說明腫瘤在哪裡、壓到什麼。</p><p class="en">We review your symptoms and scans, and I sketch where the tumour is and what it touches.</p></div></li>
+          <li><div><h3 class="zh">荷爾蒙抽血、MRI、視野檢查</h3><h3 class="en">Hormones, MRI, visual fields</h3><p class="zh">這三項決定腫瘤的類型，以及需不需要處理、多急。</p><p class="en">These three tell us the tumour type, whether it needs treatment, and how soon.</p></div></li>
+          <li><div><h3 class="zh">決定治療方式</h3><h3 class="en">Choosing a plan</h3><p class="zh">追蹤、藥物、手術或放射治療，我們一起討論利弊。</p><p class="en">Observation, medication, surgery or radiation. We weigh the options together.</p></div></li>
+          <li><div><h3 class="zh">手術與住院</h3><h3 class="en">Surgery and hospital stay</h3><p class="zh">術後密切監測尿量與荷爾蒙，留意尿崩症等變化。</p><p class="en">Afterwards we watch urine output and hormones closely, including for diabetes insipidus.</p></div></li>
+          <li><div><h3 class="zh">長期追蹤</h3><h3 class="en">Long-term follow-up</h3><p class="zh">定期回診抽血與 MRI。腦下垂體的照顧是一段長時間的合作。</p><p class="en">Regular bloodwork and MRI. Pituitary care is a long partnership.</p></div></li>
+        </ol>
+        <p class="honest zh">不是每一顆腦下垂體瘤都需要開刀。泌乳激素瘤多數可以先用藥物控制；很小、沒有症狀的腫瘤，通常定期追蹤即可。我會先告訴你不開刀的選項。</p>
+        <p class="honest en">Not every pituitary tumour needs surgery. Most prolactinomas respond to medication, and small tumours without symptoms can usually be watched. I'll walk you through the non-surgical options first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPINE -->
+<section class="alt" id="spine" aria-labelledby="spine-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="label zh">脊椎手術</p><p class="label en">Spine surgery</p>
+        <h2 id="spine-h" class="zh">脖子到腰，神經被壓到的時候</h2>
+        <h2 class="en">When nerves are pinched, from neck to lower back</h2>
+      </div>
+      <p class="zh">脊椎手術是神經外科日常的一大部分。從頸椎前位手術、後位減壓固定，到腰椎融合，我依照壓迫的位置與脊椎穩定度選擇術式，能用小傷口完成的，就不開大傷口。</p>
+      <p class="en">Spine surgery is a large part of everyday neurosurgery. From anterior cervical surgery to posterior decompression and lumbar fusion, I choose the approach by where the compression is and how stable the spine is, using smaller incisions wherever they do the job.</p>
+    </div>
+
+    <div class="spine-signs">
+      <div class="ssign"><span class="where">Cervical</span><h3 class="zh">手麻、扣釦子變得不靈活</h3><h3 class="en">Numb hands, clumsy with buttons</h3><p class="zh">寫字、拿筷子變差，走路不穩。這可能是頸椎壓迫到脊髓，不要拖。</p><p class="en">Handwriting and chopsticks get harder, walking feels unsteady. This can mean the cervical cord is compressed; don't wait.</p></div>
+      <div class="ssign"><span class="where">Cervical</span><h3 class="zh">脖子痛，一路麻到手指</h3><h3 class="en">Neck pain running into the fingers</h3><p class="zh">單側手臂痠麻無力，抬頭或轉頭時更明顯。</p><p class="en">One arm aches, tingles or weakens, worse when looking up or turning.</p></div>
+      <div class="ssign"><span class="where">Lumbar</span><h3 class="zh">走一段路就要停下來休息</h3><h3 class="en">Having to stop after a short walk</h3><p class="zh">腿痠麻到走不動，坐下或彎腰就舒緩，是腰椎管狹窄的典型表現。</p><p class="en">Legs ache until you stop; sitting or bending forward helps. A classic sign of lumbar stenosis.</p></div>
+      <div class="ssign"><span class="where">Lumbar</span><h3 class="zh">腰痛加上坐骨神經痛</h3><h3 class="en">Back pain with sciatica</h3><p class="zh">從屁股痛到小腿或腳背，可能是椎間盤突出或腰椎滑脫。</p><p class="en">Pain from the buttock down to the calf or foot, often a disc herniation or spondylolisthesis.</p></div>
+    </div>
+
+    <div class="procs" role="table" aria-label="脊椎術式">
+      <div class="proc-head" role="row"><span class="zh">術式</span><span class="en">Procedure</span><span class="zh">白話說明</span><span class="en">In plain words</span><span class="zh">常見適應症</span><span class="en">Usually for</span></div>
+      <div class="proc" role="row">
+        <div><h3 class="zh">前位頸椎椎間盤切除與融合</h3><h3 class="en">Anterior cervical discectomy &amp; fusion</h3><span class="abbr">ACDF</span></div>
+        <p class="zh">從脖子前方約 3–4 公分的橫向小切口進入，移除壓迫神經的椎間盤與骨刺，再放入支架讓兩節頸椎癒合。傷口通常沿著頸部皺褶，癒合後不明顯。</p>
+        <p class="en">A small horizontal incision at the front of the neck. The disc and bone spurs pressing on nerves are removed, then a spacer lets the two vertebrae fuse. The scar usually follows a natural skin crease.</p>
+        <p class="for"><b class="zh">適合</b><b class="en">FOR</b><span class="zh">頸椎椎間盤突出、骨刺造成的神經根或脊髓壓迫</span><span class="en">Cervical disc herniation or spurs compressing nerve roots or the cord</span></p>
+      </div>
+      <div class="proc" role="row">
+        <div><h3 class="zh">後位減壓與固定</h3><h3 class="en">Posterior decompression &amp; fixation</h3><span class="abbr">Laminectomy / laminoplasty · pedicle screws</span></div>
+        <p class="zh">從背後把壓迫神經的椎板、韌帶拿掉，讓神經有空間；若脊椎不穩定，再用螺釘與連桿固定。頸椎與腰椎都適用。</p>
+        <p class="en">From the back, the bone and ligament crowding the nerves are removed to give them room. If the spine is unstable, screws and rods hold it in place. Used in both the neck and lower back.</p>
+        <p class="for"><b class="zh">適合</b><b class="en">FOR</b><span class="zh">多節段椎管狹窄、後縱韌帶鈣化、外傷或腫瘤造成的不穩定</span><span class="en">Multilevel stenosis, OPLL, instability from trauma or tumour</span></p>
+      </div>
+      <div class="proc" role="row">
+        <div><h3 class="zh">經椎間孔腰椎椎間融合</h3><h3 class="en">Transforaminal lumbar interbody fusion</h3><span class="abbr">TLIF · MIS-TLIF</span></div>
+        <p class="zh">從背後側邊進入，清除椎間盤、解除神經壓迫，放入椎間支架並以螺釘固定，讓滑脫或不穩的腰椎重新穩定。適合時可用微創方式、經皮置入螺釘，減少肌肉破壞。</p>
+        <p class="en">Through the back, slightly to one side: the disc is cleared, the nerves are freed, and a cage plus screws stabilise the segment. When suitable, it's done minimally invasively with percutaneous screws to spare the muscles.</p>
+        <p class="for"><b class="zh">適合</b><b class="en">FOR</b><span class="zh">腰椎滑脫、椎間盤退化合併不穩定、復發性椎間盤突出</span><span class="en">Spondylolisthesis, degenerative instability, recurrent disc herniation</span></p>
+      </div>
+      <div class="proc" role="row">
+        <div><h3 class="zh">微創腰椎減壓</h3><h3 class="en">Minimally invasive lumbar decompression</h3><span class="abbr">MIS decompression · microdiscectomy</span></div>
+        <p class="zh">用管狀牽開器與顯微鏡，經小傷口移除突出的椎間盤或增生的骨頭，不需要固定。多數病人術後隔天即可下床。</p>
+        <p class="en">Through a small tubular retractor under the microscope, the herniated disc or overgrown bone is removed without fusion. Most patients are up the next day.</p>
+        <p class="for"><b class="zh">適合</b><b class="en">FOR</b><span class="zh">單純椎間盤突出、未合併不穩定的椎管狹窄</span><span class="en">Simple disc herniation, stenosis without instability</span></p>
+      </div>
+    </div>
+    <p class="honest zh">多數腰痠背痛不需要開刀。藥物、復健、運動調整與神經阻斷注射，常常就能改善。我會在手術前確認保守治療已經試過，或者出現了不該再等的警訊，例如無力、大小便控制變差。</p>
+    <p class="honest en">Most back and neck pain doesn't need surgery. Medication, physiotherapy, activity changes and nerve blocks often help. I recommend surgery once conservative care has been tried, or when warning signs appear that shouldn't wait, such as weakness or bladder and bowel changes.</p>
+    <p class="note zh"><a href="/cervical-spine/">頸椎完整說明 →</a>　<a href="/low-back-pain/">下背痛與腰椎完整說明 →</a></p>
+  </div>
+</section>
+
+<!-- PRACTICE -->
+<section id="practice" aria-labelledby="prac-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="label zh">治療範圍</p><p class="label en">Scope of practice</p>
+        <h2 id="prac-h" class="zh">專注腦下垂體，背後是完整的神經外科訓練</h2>
+        <h2 class="en">Focused on the pituitary, backed by full neurosurgical training</h2>
+      </div>
+      <p class="zh">次專科讓我在腦下垂體與顱底看得更深；完整的神經外科訓練，讓我在面對脊椎神經壓迫、腦瘤或外傷時，能從整個神經系統來判斷。</p>
+      <p class="en">Subspecialty focus gives depth in pituitary and skull base surgery. General neurosurgical training lets me judge headaches, nerve compression and trauma across the whole nervous system.</p>
+    </div>
+    <div class="practice">
+      <article class="area lead">
+        <p class="label zh">主要專長</p><p class="label en">Primary focus</p>
+        <h3 class="zh">腦下垂體與鞍區腫瘤</h3><h3 class="en">Pituitary &amp; sellar tumours</h3>
+        <ul class="zh"><li>無功能性腦下垂體腺瘤</li><li>泌乳激素瘤、生長激素瘤、庫欣氏病</li><li>拉克氏囊腫、腦下垂體中風</li></ul>
+        <ul class="en"><li>Non-functioning adenomas</li><li>Prolactinoma, acromegaly, Cushing's disease</li><li>Rathke's cleft cyst, pituitary apoplexy</li></ul>
+        <p class="how zh">經鼻內視鏡手術・與內分泌科共同照護</p><p class="how en">Endoscopic endonasal surgery · co-managed with endocrinology</p>
+      </article>
+      <article class="area">
+        <p class="label zh">顱底</p><p class="label en">Skull base</p>
+        <h3 class="zh">內視鏡顱底手術</h3><h3 class="en">Endoscopic skull base surgery</h3>
+        <ul class="zh"><li>顱咽管瘤、鞍結節腦膜瘤</li><li>脊索瘤等斜坡腫瘤</li><li>腦脊髓液鼻漏修補</li></ul>
+        <ul class="en"><li>Craniopharyngioma, tuberculum meningioma</li><li>Chordoma and clival tumours</li><li>CSF leak repair</li></ul>
+        <p class="how zh">擴大經鼻內視鏡・顱底重建</p><p class="how en">Extended endonasal approach · skull base reconstruction</p>
+      </article>
+      <article class="area">
+        <p class="label zh">脊椎</p><p class="label en">Spine</p>
+        <h3 class="zh">頸椎與腰椎手術</h3><h3 class="en">Cervical &amp; lumbar spine surgery</h3>
+        <ul class="zh"><li>前位頸椎椎間盤切除與融合（ACDF）</li><li>頸、腰椎後位減壓與螺釘固定</li><li>TLIF／微創 TLIF、微創減壓</li></ul>
+        <ul class="en"><li>Anterior cervical discectomy &amp; fusion (ACDF)</li><li>Posterior cervical/lumbar decompression &amp; fixation</li><li>TLIF / MIS-TLIF, minimally invasive decompression</li></ul>
+        <p class="how zh"><a href="#spine">看術式白話說明 →</a></p><p class="how en"><a href="#spine">Procedures explained →</a></p>
+      </article>
+      <article class="area">
+        <p class="label zh">一般神經外科</p><p class="label en">General neurosurgery</p>
+        <h3 class="zh">腦腫瘤與神經外傷</h3><h3 class="en">Brain tumours &amp; neurotrauma</h3>
+        <ul class="zh"><li>腦瘤評估與手術</li><li>頭部外傷、硬腦膜下出血</li><li>慢性硬腦膜下血腫</li></ul>
+        <ul class="en"><li>Brain tumour assessment and surgery</li><li>Head injury, subdural haemorrhage</li><li>Chronic subdural haematoma</li></ul>
+        <p class="how zh">奇美醫院神經外科團隊</p><p class="how en">Chi Mei neurosurgery team</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="alt" id="about" aria-labelledby="about-h">
+  <div class="wrap about">
+    <div class="photo"><span class="zh">醫師照片<br><small>建議：白袍或刷手服、自然光、直視鏡頭</small></span><span class="en">Portrait<br><small>Suggested: white coat or scrubs, natural light</small></span></div>
+    <div>
+      <p class="label zh">關於我</p><p class="label en">About me</p>
+      <h2 id="about-h" style="font-size:clamp(25px,3vw,34px);margin:8px 0 24px" class="zh">嗨，我是李瑤琳醫師</h2>
+      <h2 style="font-size:clamp(25px,3vw,34px);margin:8px 0 24px" class="en">Hello, I'm Dr. Lee</h2>
+      <div class="letter">
+        <p class="zh">腦下垂體的病人，常常帶著一疊檢查報告和一連串沒有答案的問題來到門診。我希望每一次看診結束時，你能清楚知道三件事：腫瘤在哪裡、它對你有什麼影響、接下來有哪些選擇。</p>
+        <p class="zh">我在奇美醫院擔任神經外科主治醫師，次專科專注於腦下垂體、顱底與內視鏡手術。我也持續在約翰霍普金斯大學進修應用生醫工程，因為我相信更好的工具，能讓手術更安全。</p>
+        <p class="en">Pituitary patients often arrive with a stack of reports and many unanswered questions. By the end of each visit, I want you to know three things: where the tumour is, how it affects you, and what your options are.</p>
+        <p class="en">I'm an attending neurosurgeon at Chi Mei Medical Center with a subspecialty focus in pituitary, skull base and endoscopic surgery. I'm also completing an MSc in Applied Biomedical Engineering at Johns Hopkins, because better tools make surgery safer.</p>
+        <p class="sig zh">— 李瑤琳</p><p class="sig en">— Yao Lin Lee</p>
+      </div>
+      <div class="cv">
+        <div><span>2021 –</span><p class="zh">奇美醫學中心 神經外科 主治醫師</p><p class="en">Attending Neurosurgeon, Chi Mei Medical Center</p></div>
+        <div><span>Board</span><p class="zh">台灣腦下垂體學會 理事</p><p class="en">Governing Board, Taiwan Pituitary Society</p></div>
+        <div><span>MSc</span><p class="zh">美國約翰霍普金斯大學 應用生醫工程碩士（進修中）</p><p class="en">MSc Applied Biomedical Engineering, Johns Hopkins University (in progress)</p></div>
+        <div><span>2023</span><p class="zh">國家級創新競賽獲獎兩項（吞嚥壓力訓練裝置、創傷訓練模型）</p><p class="en">Two national innovation awards (swallowing training device, trauma training model)</p></div>
+        <div><span>2014</span><p class="zh">國防醫學院 醫學系</p><p class="en">MD, National Defense Medical Center</p></div>
+        <div><span>Cert.</span><p class="zh">中華民國神經外科專科醫師 <span class="tbd">住院醫師訓練醫院待補</span></p><p class="en">Board-certified neurosurgeon, Taiwan <span class="tbd">residency hospital TBD</span></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREP -->
+<section id="prep" aria-labelledby="prep-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="label zh">看診前</p><p class="label en">Before your visit</p>
+        <h2 id="prep-h" class="zh">第一次看診，帶這些來</h2>
+        <h2 class="en">Bring these to your first visit</h2>
+      </div>
+      <p class="zh">準備齊全，第一次門診就能做出比較完整的判斷，省下你來回跑的時間。可以直接在這裡勾選。</p>
+      <p class="en">With these in hand, we can make a fuller assessment at the first visit and save you extra trips. Tick them off here.</p>
+    </div>
+    <ul class="prep">
+      <li><input type="checkbox" id="p1" aria-label="MRI"><label for="p1"><span class="zh">MRI 或 CT 影像光碟</span><span class="en">MRI or CT images on disc</span><small class="zh">報告不夠，需要原始影像</small><small class="en">The report alone isn't enough; bring the images</small></label></li>
+      <li><input type="checkbox" id="p2" aria-label="Bloodwork"><label for="p2"><span class="zh">近期抽血報告</span><span class="en">Recent blood tests</span><small class="zh">尤其是荷爾蒙相關檢驗</small><small class="en">Especially hormone tests</small></label></li>
+      <li><input type="checkbox" id="p3" aria-label="Visual field"><label for="p3"><span class="zh">眼科視野檢查結果</span><span class="en">Visual field results</span><small class="zh">若有做過</small><small class="en">If you've had one</small></label></li>
+      <li><input type="checkbox" id="p4" aria-label="Medications"><label for="p4"><span class="zh">目前用藥清單</span><span class="en">Current medications</span><small class="zh">包括避孕藥、類固醇、保健食品</small><small class="en">Including the pill, steroids and supplements</small></label></li>
+      <li><input type="checkbox" id="p5" aria-label="Timeline"><label for="p5"><span class="zh">症狀時間軸</span><span class="en">Symptom timeline</span><small class="zh">什麼時候開始、怎麼變化；女性請記錄月經狀況</small><small class="en">When it started and how it changed; for women, menstrual history</small></label></li>
+      <li><input type="checkbox" id="p6" aria-label="Questions"><label for="p6"><span class="zh">寫下想問的問題</span><span class="en">Your questions, written down</span><small class="zh">門診時容易緊張忘記，也歡迎家人陪同</small><small class="en">It's easy to forget in the room; family are welcome</small></label></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="alt" id="articles" aria-labelledby="art-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="label zh">衛教文章</p><p class="label en">Articles</p>
+        <h2 id="art-h" class="zh">門診最常被問的問題</h2>
+        <h2 class="en">Questions I hear most in clinic</h2>
+      </div>
+      <p class="zh">每一篇都從病人真正問過的問題出發。</p>
+      <p class="en">Each one starts from a question a patient actually asked.</p>
+    </div>
+    <div class="articles">
+      <a class="article" href="#articles"><p class="label zh">偶發瘤</p><p class="label en">Incidentaloma</p><h3 class="zh">健檢 MRI 說腦下垂體有個小東西，我需要開刀嗎？</h3><h3 class="en">My MRI found a small pituitary lesion. Do I need surgery?</h3><p class="zh">大小、荷爾蒙、視野，三個數字決定下一步。</p><p class="en">Size, hormones and vision decide the next step.</p></a>
+      <a class="article" href="#articles"><p class="label zh">泌乳激素</p><p class="label en">Prolactin</p><h3 class="zh">泌乳激素偏高，一定是腫瘤嗎？</h3><h3 class="en">High prolactin: is it always a tumour?</h3><p class="zh">藥物、壓力、甲狀腺都可能讓數字升高。</p><p class="en">Medication, stress and the thyroid can all raise it.</p></a>
+      <a class="article" href="#articles"><p class="label zh">手術</p><p class="label en">Surgery</p><h3 class="zh">經鼻內視鏡手術後，鼻子會變形嗎？嗅覺會不見嗎？</h3><h3 class="en">Will endoscopic surgery change my nose or sense of smell?</h3><p class="zh">術後恢復期間會發生什麼，一次說清楚。</p><p class="en">What recovery actually looks like, step by step.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- CLINIC -->
+<section id="clinic" aria-labelledby="cl-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="label zh">門診資訊</p><p class="label en">Clinic</p>
+        <h2 id="cl-h" class="zh">門診時間與掛號</h2>
+        <h2 class="en">Clinic hours &amp; booking</h2>
+      </div>
+      <p class="zh">門診時間如有異動，以醫院官網公告為準。</p>
+      <p class="en">If hours change, the hospital's official schedule takes precedence.</p>
+    </div>
+    <div class="clinic">
+      <div class="table-wrap">
+        <table class="hours">
+          <thead><tr><th></th><th><span class="zh">一</span><span class="en">Mon</span></th><th><span class="zh">二</span><span class="en">Tue</span></th><th><span class="zh">三</span><span class="en">Wed</span></th><th><span class="zh">四</span><span class="en">Thu</span></th><th><span class="zh">五</span><span class="en">Fri</span></th><th><span class="zh">六</span><span class="en">Sat</span></th></tr></thead>
+          <tbody>
+            <tr><td><span class="zh">上午</span><span class="en">AM</span></td><td></td><td class="on">●</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td><span class="zh">下午</span><span class="en">PM</span></td><td></td><td class="on">●</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td><span class="zh">夜間</span><span class="en">Eve</span></td><td></td><td></td><td class="on">●<sup class="odd">*</sup></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+        <p class="note"><span class="zh">* 週三夜診為<b>單數週</b>開診。出發前建議再到掛號系統確認當週是否有診。</span><span class="en">* Wednesday evening clinic runs on <b>odd-numbered weeks</b> only. Please check the booking system for that week before coming.</span></p>
+      </div>
+      <div class="place">
+        <div class="row"><span class="zh">院區</span><span class="en">Site</span><span class="zh">奇美醫學中心 永康院區</span><span class="en">Chi Mei Medical Center, Yongkang campus</span></div>
+        <div class="row"><span class="zh">科別</span><span class="en">Dept.</span><span><a href="https://sub.chimei.org.tw/57520/" target="_blank" rel="noopener"><span class="zh">永康院區 神經外科</span><span class="en">Neurosurgery, Yongkang</span> ↗</a></span></div>
+        <div class="row"><span class="zh">地址</span><span class="en">Address</span><span>台南市永康區中華路901號</span></div>
+        <div class="row"><span class="zh">掛號</span><span class="en">Booking</span><span><a href="https://www.chimei.org.tw/newindex/opd/opd.html" target="_blank" rel="noopener"><span class="zh">奇美醫院網路掛號（選永康院區・神經外科）</span><span class="en">Chi Mei online booking (Yongkang · Neurosurgery)</span> ↗</a></span></div>
+        <div class="urgent zh">若出現突然劇烈頭痛、視力急速變差、意識改變，可能是腦下垂體中風，請立即前往急診或撥打 119，不要等候門診。</div>
+        <div class="urgent en">Sudden severe headache, rapid vision loss or confusion may signal pituitary apoplexy. Go to the emergency department or call 119; don't wait for a clinic appointment.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Base>
