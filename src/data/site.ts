@@ -28,6 +28,7 @@ export const NAV = [
   { href: '/pituitary/', label: '腦下垂體' },
   { href: '/cervical-spine/', label: '頸椎' },
   { href: '/low-back-pain/', label: '下背痛與腰椎' },
+  { href: '/osteoporosis/', label: '骨質疏鬆' },
   { href: '/minimally-invasive/', label: '微創手術與設備' },
   { href: '/trauma/', label: '腦出血與外傷' },
   { href: '/faq/', label: '門診常見問題' },
