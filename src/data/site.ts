@@ -4,7 +4,7 @@
 
 export const SITE = {
   // 買好網域後，把這裡換成你的網址（SEO 與 sitemap 會用到）
-  url: 'https://www.example.com',
+  url: 'https://dryaolinlee.com',
   name: '李瑤琳醫師｜腦下垂體・顱底內視鏡・脊椎',
   doctor: {
     zh: '李瑤琳',
