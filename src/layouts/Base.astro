@@ -19,6 +19,7 @@ const physician = {
   name: `${SITE.doctor.zh} 醫師`,
   alternateName: `Dr. ${SITE.doctor.en}`,
   url: SITE.url,
+  image: new URL('/images/dr-lee.jpg', SITE.url).href,
   medicalSpecialty: ['Neurosurgery', 'Endocrine'],
   knowsAbout: ['腦下垂體腫瘤', '經鼻內視鏡手術', '顱底手術', '頸椎手術', '腰椎手術', '微創脊椎手術', '神經外傷'],
   sameAs: [SITE.doctor.orcid],
@@ -45,6 +46,7 @@ const physician = {
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical} />
   <meta property="og:locale" content="zh_TW" />
+  <meta property="og:image" content={new URL('/images/dr-lee.jpg', SITE.url).href} />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -238,3 +238,6 @@ nav.main a[aria-current="page"]{color:var(--accent)}
 .hub a:hover{border-color:var(--accent)}
 .hub b{font-family:var(--serif);font-size:18px}
 .hub span{font-size:14px;color:var(--ink-2)}
+
+img.portrait{object-fit:cover;border:0;padding:0}
+img.photo{object-fit:cover;object-position:center 30%;border:0;padding:0;background:none;width:100%;height:auto;aspect-ratio:4/5;display:block}
