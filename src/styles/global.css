@@ -241,3 +241,5 @@ nav.main a[aria-current="page"]{color:var(--accent)}
 
 img.portrait{object-fit:cover;border:0;padding:0}
 img.photo{object-fit:cover;object-position:center 30%;border:0;padding:0;background:none;width:100%;height:auto;aspect-ratio:4/5;display:block}
+.faq details{scroll-margin-top:90px}
+.article .more{font-size:13.5px;color:var(--accent);margin-top:2px}

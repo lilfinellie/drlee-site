@@ -4,9 +4,19 @@ const { items } = Astro.props as { items: QA[] };
 ---
 <div class="faq">
   {items.map((i) => (
-    <details>
+    <details id={i.id}>
       <summary>{i.q}</summary>
       <div class="a" set:html={i.a} />
     </details>
   ))}
 </div>
+<script is:inline>
+  (function () {
+    function openHash() {
+      var id = decodeURIComponent(location.hash.slice(1));
+      var el = id && document.getElementById(id);
+      if (el && el.tagName === 'DETAILS') { el.open = true; el.scrollIntoView({ block: 'start' }); }
+    }
+    openHash(); window.addEventListener('hashchange', openHash);
+  })();
+</script>

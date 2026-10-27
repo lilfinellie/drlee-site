@@ -1,4 +1,4 @@
-export type QA = { q: string; a: string };
+export type QA = { q: string; a: string; id?: string };
 // 產生 Google 可讀的 FAQ 結構化資料
 export const faqSchema = (items: QA[]) => ({
   '@context': 'https://schema.org',
