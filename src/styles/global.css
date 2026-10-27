@@ -251,3 +251,10 @@ img.photo{max-width:300px;aspect-ratio:auto;border-radius:10px}
 .lang,.menu-btn{flex:none;white-space:nowrap}
 .brand{min-width:0}
 @media (max-width:480px){.top .wrap{gap:10px}.brand span{font-size:11px}}
+.press{margin-top:40px}
+.press ul{list-style:none;margin:12px 0 0;padding:0;display:grid}
+.press li a{display:grid;gap:2px;padding:12px 0;border-top:1px solid var(--line);text-decoration:none}
+.press li:last-child a{border-bottom:1px solid var(--line)}
+.press .t{font-size:15px;color:var(--ink)}
+.press a:hover .t{color:var(--accent)}
+.press .m{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}

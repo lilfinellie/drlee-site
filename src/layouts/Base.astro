@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE, NAV } from '../data/site';
+import { PRESS } from '../data/press';
 
 interface Props {
   title: string;          // 分頁標題（Google 搜尋結果的藍色標題）
@@ -30,6 +31,7 @@ const physician = {
     addressRegion: '台南市',
     addressCountry: 'TW',
   },
+  subjectOf: PRESS.map((p) => ({ '@type': 'NewsArticle', headline: p.title, url: p.url, publisher: { '@type': 'Organization', name: p.outlet } })),
   hospitalAffiliation: { '@type': 'Hospital', name: '奇美醫學中心', url: 'https://www.chimei.org.tw/' },
 };
 ---

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { PRESS } from '../data/press';
 ---
 <Base
   title="李瑤琳醫師｜腦下垂體・顱底內視鏡・脊椎手術｜奇美醫學中心 神經外科"
@@ -296,6 +297,14 @@ import Base from '../layouts/Base.astro';
         <div><span>2021 –</span><p class="zh">奇美醫學中心 神經外科 主治醫師</p><p class="en">Attending Neurosurgeon, Chi Mei Medical Center</p></div>
         <div><span>Cert.</span><p class="zh">中華民國神經外科專科醫師（奇美醫院住院醫師訓練）</p><p class="en">Board-certified neurosurgeon, Taiwan (residency training at Chi Mei Medical Center)</p></div>
         <div><span>2014</span><p class="zh">國防醫學院 醫學系</p><p class="en">MD, National Defense Medical Center</p></div>
+      </div>
+      <div class="press">
+        <p class="label zh">媒體報導</p><p class="label en">In the media</p>
+        <ul>
+          {PRESS.map((p) => (
+            <li><a href={p.url} target="_blank" rel="noopener"><span class="t">{p.title}</span><span class="m">{p.outlet}・{p.date}</span></a></li>
+          ))}
+        </ul>
       </div>
     </div>
   </div>
