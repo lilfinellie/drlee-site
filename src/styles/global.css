@@ -244,9 +244,9 @@ img.photo{object-fit:cover;object-position:center 30%;border:0;padding:0;backgro
 .faq details{scroll-margin-top:90px}
 .article .more{font-size:13.5px;color:var(--accent);margin-top:2px}
 .prose .table-wrap{margin:8px 0 20px}
-img.photo{max-width:150px;aspect-ratio:auto;border-radius:10px}
-@media (max-width:860px){img.photo{max-width:120px}}
-.about{grid-template-columns:150px minmax(0,1fr)}
+img.photo{max-width:300px;aspect-ratio:auto;border-radius:10px}
+@media (max-width:860px){img.photo{max-width:240px}}
+.about{grid-template-columns:300px minmax(0,1fr)}
 @media (max-width:860px){.about{grid-template-columns:minmax(0,1fr)}}
 .lang,.menu-btn{flex:none;white-space:nowrap}
 .brand{min-width:0}
